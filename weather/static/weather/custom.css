@@ -1,0 +1,71 @@
+html,body, #outer_body {
+	margin:0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	font-family: Helvetica, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px
+	
+}
+#outer_body {
+	background-image:url(bg.jpg);
+	display: flex;
+	flex-flow: row wrap;
+  	justify-content: center;
+}
+#fetch_form_div {
+	margin: auto;
+	height: 50px;
+	text-align: center
+}
+#fetch_form {
+	margin: auto;
+	color: white;
+}
+input, select{
+    margin: 8px 0;
+}
+input[type="text"],select {
+	width: 180px
+}
+label {
+	font-weight: bold;
+	color:white;
+}
+#clear{
+	width: 100%;
+}
+#add_form_div {
+	margin: auto;
+	height: 120px;
+	text-align: center
+}
+#id_add_city {
+	vertical-align: middle;
+	height: 100px
+}
+#added_cities {
+	height: 115px;
+	width: 358px;
+}
+.show
+{
+    display : block;
+    /*position : fixed;*/
+    z-index: 100;
+    background-image : url('http://loadinggif.com/images/image-selection/3.gif');
+    background-color:#666;
+    opacity : 0.8;
+    background-repeat : no-repeat;
+    background-position : center;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    top : 0;
+    width:1000;
+    height:500;
+}
+
+.hide {
+
+}

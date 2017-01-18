@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Add Cities</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'weather/custom.css' %}">
+</head>
+<body>
+	<div id="outer_body">
+		<div id="add_form_div">
+			<form id="add_form">
+			{% csrf_token %}
+			{{form}}
+			<input type="button" name="add" id="add" value="Add">
+			</form>
+		</div>
+		<div id="clear"></div>
+		<label for=added_cities>Cities:</label>
+		<textarea id="added_cities">
+		</textarea>
+	</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+(function() {
+	$.get({
+	  url: '/getcities/',
+	  dataType: 'script',
+	  cache: true,
+	  success: function(data) {
+	  	$("#added_cities").val(JSON.parse(data));
+	  },
+	  fail: function () {
+	  	alert("Please Try Later")
+	  }
+	});
+})();
+</script>
+<script src="{% static 'weather/custom.js' %}"></script>
+<script>
+$(function() {
+ init_add();
+});
+</script>
+</body>
+</html>

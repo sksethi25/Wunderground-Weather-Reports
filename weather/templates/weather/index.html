@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Weather Data</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'weather/jquery-ui.css' %}">
+<link rel="stylesheet" href="{% static 'weather/custom.css' %}">
+</head>
+<body>
+	<div id="outer_body">
+		<div id="fetch_form_div">
+			<form id="fetch_form">
+			{% csrf_token %}
+			{{form}}
+			<input type="button" name="fetch" id="fetch" value="Fetch">
+			</form>
+		</div>
+		<div></div>
+		<div  id="chart_container">
+			<div id="chart"></div>
+		</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script  async
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+<script>
+(function() {
+	$.get({
+	  url: 'https://cdn.plot.ly/plotly-latest.min.js',
+	  dataType: 'script',
+	  cache: true,
+	  success: function() {
+	  },
+	  fail: function () {
+	  }
+	});
+})();
+</script>
+<script src="{% static 'weather/custom.js' %}"></script>
+<script>
+$(function() {
+ init_js();
+});
+</script>
+</body>
+</html>
