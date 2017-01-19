@@ -1,0 +1,4 @@
+Django==1.10.5
+requests==2.12.4
+sqlparse==0.2.2
+MySQL-python
