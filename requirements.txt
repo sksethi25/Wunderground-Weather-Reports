@@ -3,3 +3,4 @@ gunicorn==19.6.0
 MySQL-python==1.2.5
 requests==2.12.4
 sqlparse==0.2.2
+whitenoise==3.2.3
