@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 from django.apps import AppConfig
+import os
 
 class WeatherConfig(AppConfig):
   name = 'weather'
-  wukey = "ADD Wu key here"
+  wukey = os.environ['WU_KEY']
   wcondition = (
   ('tempm','Temperature'),
   ('humidity','Humidity'),

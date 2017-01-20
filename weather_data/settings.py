@@ -25,7 +25,7 @@ SECRET_KEY = 's%jldtvgm=-v_myk-n!bf9j=i%9pqxh%5ufep2j%ibijjt!akm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wuweather.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'weather_data.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'weather_data',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'weather_data',
+        # 'USER': '',
+        # 'PASSWORD': '',
+        # 'HOST': '',
+        # 'PORT': ''
     }
 }
 
