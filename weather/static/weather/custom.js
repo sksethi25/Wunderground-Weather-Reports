@@ -130,11 +130,32 @@ var getPropername = function (name) {
           alert( "please Try again" );
         });
   };
+  var toadd = function () {
+    window.location.replace("/add/");
+  };
+  var tofetch = function () {
+    window.location.replace("/");
+  };
+  var onreset = function (event) {
+    if(confirm("it will clear all cities and data fecthes!are You Sure!")) {
+      $.post('/reset/', $("#" + event.data.form +"_form").serialize())
+        .done(function(response) {
+          location.reload();
+        })
+        .fail(function() {
+          alert( "please Try again" );
+        });
+    }
+  };
   var init_js = function () {
     add_datepicker();
     $("#fetch").on('click', onfetch);
+    $("#to_add").on('click', toadd);
+    $("#reset_data").on('click',  {form:"fetch"}, onreset);
     
   };
   var init_add = function () {
     $("#add").on('click', onadd);
+    $("#to_fetch").on('click', tofetch);
+    $("#reset_data").on('click', {form:"add"}, onreset);
   };

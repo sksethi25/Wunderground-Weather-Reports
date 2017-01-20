@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .forms import fetchForm, addCity
 from .services import get, add_service
-from .models import Cities, Cities_available
+from .models import Cities, Cities_available, Weather
 
 def index(request):
   return render(request, 'weather/index.html', {'form': fetchForm()})
@@ -41,4 +41,10 @@ def add_city(request):
       city = form.cleaned_data['add_city']
       print (city)
       add_service(city)
-    return HttpResponse("hle")
+    return HttpResponse("done")
+
+
+def reset(request):
+  Cities.objects.all().delete()
+  Weather.objects.all().delete()
+  return HttpResponse("done")

@@ -8,5 +8,6 @@ urlpatterns = [
 	url(r'^add/$', views.add),
 	url(r'^addcity/$', views.add_city),
 	url(r'^getcities/$', views.get_cities),
+	url(r'^reset/$', views.reset),
 	url(r'^.*$', views.index)
 ]
